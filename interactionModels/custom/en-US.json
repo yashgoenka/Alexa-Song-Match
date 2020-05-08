@@ -1,0 +1,39 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "song match",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureArtistIntent",
+          "slots": [
+            {
+              "name": "artist",
+              "type": "AMAZON.Month"
+            }
+          ],
+          "samples": [
+            "{artist}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "4"
+}
