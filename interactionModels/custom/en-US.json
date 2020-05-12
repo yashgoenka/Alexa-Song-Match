@@ -24,16 +24,420 @@
           "slots": [
             {
               "name": "artist",
-              "type": "AMAZON.Month"
+              "type": "AMAZON.Musician",
+              "samples": [
+                "{artist}"
+              ]
             }
           ],
           "samples": [
+            "my favorite artist is {artist}",
+            "it is {artist}",
             "{artist}"
+          ]
+        },
+        {
+          "name": "AnswerOneIntent",
+          "slots": [
+            {
+              "name": "answerOne",
+              "type": "answerOne_slot",
+              "samples": [
+                "{answerOne}"
+              ]
+            }
+          ],
+          "samples": [
+            "{answerOne}"
+          ]
+        },
+        {
+          "name": "AnswerTwoIntent",
+          "slots": [
+            {
+              "name": "answerTwo",
+              "type": "answerTwo_slot",
+              "samples": [
+                "{answerTwo}"
+              ]
+            }
+          ],
+          "samples": [
+            "{answerTwo}"
+          ]
+        },
+        {
+          "name": "AnswerThreeIntent",
+          "slots": [
+            {
+              "name": "answerThree",
+              "type": "answerThree_slot",
+              "samples": [
+                "{answerThree}"
+              ]
+            }
+          ],
+          "samples": [
+            "{answerThree}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "brilliant"
+              }
+            },
+            {
+              "name": {
+                "value": "crazy"
+              }
+            },
+            {
+              "name": {
+                "value": "introverted"
+              }
+            },
+            {
+              "name": {
+                "value": "extroverted"
+              }
+            },
+            {
+              "name": {
+                "value": "after"
+              }
+            },
+            {
+              "name": {
+                "value": "before"
+              }
+            }
+          ],
+          "name": "answerOne_slot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "hill",
+                "synonyms": [
+                  "hillside",
+                  "hills"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "humans"
+              }
+            },
+            {
+              "name": {
+                "value": "jupiter"
+              }
+            },
+            {
+              "name": {
+                "value": "beach"
+              }
+            },
+            {
+              "name": {
+                "value": "robots"
+              }
+            },
+            {
+              "name": {
+                "value": "mars"
+              }
+            }
+          ],
+          "name": "answerTwo_slot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "waffles"
+              }
+            },
+            {
+              "name": {
+                "value": "pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "pizza"
+              }
+            },
+            {
+              "name": {
+                "value": "instagram"
+              }
+            },
+            {
+              "name": {
+                "value": "burger"
+              }
+            },
+            {
+              "name": {
+                "value": "facebook"
+              }
+            }
+          ],
+          "name": "answerThree_slot"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "adele",
+                "synonyms": [
+                  "Adele"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "madonna",
+                "synonyms": [
+                  "Madonna"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "david bowie",
+                "synonyms": [
+                  "David Bowie",
+                  "David bowie"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "kanye west",
+                "synonyms": [
+                  "Kanye West",
+                  "Kanye west"
+                ]
+              }
+            }
+          ],
+          "name": "AMAZON.Musician"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureArtistIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "artist",
+              "type": "AMAZON.Musician",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1405506447460.500534198140"
+              },
+              "validations": [
+                {
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.348149765803.1484142745675.217764587053",
+                  "values": [
+                    "David Bowie",
+                    "madonna",
+                    "Kanye West",
+                    "david bowie",
+                    "Adele",
+                    "Madonna",
+                    "kanye west",
+                    "adele"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AnswerOneIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "answerOne",
+              "type": "answerOne_slot",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1331148325297.1095965973523"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.399984592447.746155082465.1020519629906"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AnswerTwoIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "answerTwo",
+              "type": "answerTwo_slot",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1452516768590.620318866849"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1059130746849.1173144445345.310259800067"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AnswerThreeIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "answerThree",
+              "type": "answerThree_slot",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.642821332359.454591052854"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.642821332359.454591052854.1517175512177"
+                }
+              ]
+            }
           ]
         }
       ],
-      "types": []
-    }
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.348149765803.1484142745675.217764587053",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you please say the name of another one of your favorite artists?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please say the name of another one of your favorite artists."
+          },
+          {
+            "type": "PlainText",
+            "value": "Could you please say the name of another one of your favorite artists?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Could you select an artist out of Adele, David Bowie, Kanye West, and Madonna?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1405506447460.500534198140",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "My favorite artist is Adele. Who is yours?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Who is your favorite artist?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the name of your favorite artist?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1331148325297.1095965973523",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your answer?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1452516768590.620318866849",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your answer?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.642821332359.454591052854",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your answer?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.642821332359.454591052854.1517175512177",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I did\u0027t quite understand that. Could you please say it another way?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.399984592447.746155082465.1020519629906",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I did\u0027t quite understand that. Could you please say it another way?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1059130746849.1173144445345.310259800067",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I did\u0027t quite understand that. Could you please say it another way?"
+          }
+        ]
+      }
+    ]
   },
-  "version": "4"
+  "version": "27"
 }
